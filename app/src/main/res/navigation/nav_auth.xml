@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/onboardingFragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.myapplicationpractice.ui.auth.OnboardingFragment"
+        android:label="@string/onboarding_title"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboarding_to_otpVerify"
+            app:destination="@id/otpVerifyFragment"
+            app:enterAnim="@anim/anim_fade_in"
+            app:exitAnim="@anim/anim_fade_out"
+            app:popEnterAnim="@anim/anim_fade_in"
+            app:popExitAnim="@anim/anim_fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpVerifyFragment"
+        android:name="com.example.myapplicationpractice.ui.auth.OtpVerifyFragment"
+        android:label="@string/verify_your_number"
+        tools:layout="@layout/fragment_otp_verify"/>
+
+</navigation>

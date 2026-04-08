@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_2xl">48dp</dimen>
+
+    <!-- Page padding -->
+    <dimen name="page_padding_h">20dp</dimen>
+    <dimen name="page_padding_v">20dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="card_corner_radius_large">24dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_height">58dp</dimen>
+    <dimen name="button_corner_radius">14dp</dimen>
+
+    <!-- Input -->
+    <dimen name="input_height">58dp</dimen>
+
+    <!-- Icon sizes -->
+    <dimen name="icon_sm">18dp</dimen>
+    <dimen name="icon_md">24dp</dimen>
+    <dimen name="icon_lg">40dp</dimen>
+    <dimen name="icon_xl">64dp</dimen>
+
+    <!-- Avatar -->
+    <dimen name="avatar_sm">44dp</dimen>
+    <dimen name="avatar_md">52dp</dimen>
+    <dimen name="avatar_lg">88dp</dimen>
+
+    <!-- Bottom nav height -->
+    <dimen name="bottom_nav_height">64dp</dimen>
+</resources>

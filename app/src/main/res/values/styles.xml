@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Section labels -->
+    <style name="TextAppearance.LastCall.SectionLabel" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Card titles -->
+    <style name="TextAppearance.LastCall.CardTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Body text -->
+    <style name="TextAppearance.LastCall.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <!-- Dropdown menu style -->
+    <style name="Widget.LastCall.ExposedDropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/stroke_color_selector</item>
+        <item name="boxStrokeErrorColor">@color/status_danger</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxBackgroundColor">@color/input_background</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/accent_red</item>
+    </style>
+
+    <!-- Bottom nav -->
+    <style name="Widget.LastCall.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/bg_secondary</item>
+        <item name="itemIconTint">@drawable/nav_item_selector</item>
+        <item name="itemTextColor">@drawable/nav_item_selector</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+        <item name="itemPaddingTop">8dp</item>
+        <item name="itemPaddingBottom">8dp</item>
+    </style>
+
+    <!-- Switch -->
+    <style name="Widget.LastCall.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="thumbTint">@color/switch_thumb_selector</item>
+        <item name="trackTint">@drawable/switch_track_selector</item>
+    </style>
+
+    <!-- Chip filter -->
+    <style name="Widget.LastCall.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@drawable/chip_bg_selector</item>
+        <item name="chipStrokeColor">@color/border_subtle</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@drawable/chip_text_selector</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipIconTint">@color/text_secondary</item>
+        <item name="rippleColor">@color/accent_red_ripple</item>
+    </style>
+
+    <!-- Progress Bar -->
+    <style name="Widget.LastCall.ProgressBar" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorColor">@color/accent_red</item>
+        <item name="trackColor">@color/border_subtle</item>
+    </style>
+
+    <!-- Bottom Nav Text -->
+    <style name="TextAppearance.BottomNav" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Dialog Style -->
+    <style name="Theme.LastCall.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:windowBackground">@color/bg_card</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="android:colorBackground">@color/bg_card</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+    <!-- L1: CollapsingToolbar expanded title -->
+    <style name="TextAppearance.LastCall.CollapsingExpanded" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- L1: CollapsingToolbar collapsed title -->
+    <style name="TextAppearance.LastCall.CollapsingCollapsed" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- L7: TableLayout header text -->
+    <style name="TextAppearance.LastCall.TableHeader">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- L7: TableLayout cell text -->
+    <style name="TextAppearance.LastCall.TableCell">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+</resources>

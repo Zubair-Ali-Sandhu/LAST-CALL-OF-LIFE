@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Avatar on the left -->
+        <ImageView android:id="@+id/iv_avatar"
+            android:layout_width="50dp" android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_avatar_placeholder"
+            android:background="@drawable/shape_avatar_circle"
+            android:scaleType="centerCrop"/>
+
+        <!-- Name — positioned to the right of avatar -->
+        <TextView android:id="@+id/tv_name"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
+            android:text="Contact Name"
+            android:textColor="@color/text_primary" android:textSize="15sp"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <!-- Relationship — positioned below the name -->
+        <TextView android:id="@+id/tv_relationship"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_below="@id/tv_name"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
+            android:text="Spouse"
+            android:textColor="@color/text_secondary" android:textSize="12sp"/>
+
+        <!-- Badges row below relationship -->
+        <LinearLayout android:id="@+id/layout_badges"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_below="@id/tv_relationship"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+            <ImageView android:id="@+id/iv_vault_badge"
+                android:layout_width="14dp" android:layout_height="14dp"
+                android:src="@drawable/ic_vault_lock"
+                android:layout_marginEnd="6dp" android:visibility="gone"
+                app:tint="@color/accent_warning"/>
+            <ImageView android:id="@+id/iv_notify_badge"
+                android:layout_width="14dp" android:layout_height="14dp"
+                android:src="@drawable/ic_notifications" app:tint="@color/accent_safe"/>
+        </LinearLayout>
+
+        <!-- Priority chip — aligned to the end of the parent -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_priority"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="#1" android:textSize="12sp" android:textColor="@color/accent_red"
+            app:chipBackgroundColor="#1AFF2D55" app:chipMinHeight="28dp"
+            app:chipStrokeColor="#FF2D5540" app:chipStrokeWidth="1dp"
+            app:chipCornerRadius="20dp"/>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

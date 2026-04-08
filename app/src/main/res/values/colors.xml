@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base backgrounds -->
+    <color name="bg_primary">#0D0F1A</color>
+    <color name="bg_secondary">#13162B</color>
+    <color name="bg_card">#181C35</color>
+    <color name="bg_card_elevated">#1E2340</color>
+    <color name="bg_surface">#252A4A</color>
+    <color name="input_background">#0DFFFFFF</color>  <!-- New: for input fields -->
+
+    <!-- Accent system -->
+    <color name="accent_red">#FF2D55</color>
+    <color name="accent_red_dark">#CC1F3F</color>  <!-- New: darker variant -->
+    <color name="accent_red_ripple">#33FF2D55</color>  <!-- New: for ripple effects -->
+    <color name="accent_orange">#FF6B35</color>
+    <color name="accent_orange_dark">#CC4F28</color>  <!-- New: darker variant -->
+    <color name="accent_safe">#00D68F</color>
+    <color name="accent_safe_dark">#00A36E</color>  <!-- New: darker variant -->
+    <color name="accent_warning">#FFB800</color>
+    <color name="accent_warning_dark">#CC9300</color>  <!-- New: darker variant -->
+    <color name="accent_blue">#4A90E2</color>
+    <color name="accent_blue_dark">#3A70B5</color>  <!-- New: darker variant -->
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8891B4</color>
+    <color name="text_tertiary">#4A5070</color>
+    <color name="text_disabled">#4A507080</color>  <!-- New: disabled text -->
+    <color name="text_accent">#FF2D55</color>
+
+    <!-- Borders / dividers -->
+    <color name="border_subtle">#1F2545</color>
+    <color name="border_accent">#FF2D5530</color>
+    <color name="border_focused">#FF2D55</color>  <!-- New: focused state border -->
+
+    <!-- Status -->
+    <color name="status_safe">#00D68F</color>
+    <color name="status_danger">#FF2D55</color>
+    <color name="status_warning">#FFB800</color>
+    <color name="status_info">#4A90E2</color>  <!-- New: info status -->
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    <color name="scrim">#CC0D0F1A</color>
+</resources>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_primary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/text_primary"
+        app:title="@string/estate_title"
+        app:titleTextColor="@color/text_primary"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/page_padding_h"
+            android:paddingTop="@dimen/spacing_md"
+            android:paddingBottom="@dimen/spacing_2xl">
+
+            <!-- Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estate_title"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estate_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="28dp"/>
+
+            <!-- EXECUTOR SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estate_executor"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Executor Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/border_subtle"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        style="@style/Widget.LastCall.TextInputLayout"
+                        android:hint="@string/executor_name_hint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_executor_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:inputType="textPersonName"
+                            android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        style="@style/Widget.LastCall.TextInputLayout"
+                        android:hint="@string/executor_phone_hint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_executor_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:inputType="phone"
+                            android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_upload_will"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="@string/upload_will"
+                        android:textColor="@color/accent_red"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/bg_primary"
+                        app:strokeColor="@color/border_accent"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="@dimen/button_corner_radius"
+                        app:icon="@drawable/ic_upload"
+                        app:iconTint="@color/accent_red"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- HEIRS SECTION HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/heirs_beneficiaries"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.15"
+                    android:fontFamily="@font/montserrat_bold"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_heir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="@string/add_heir"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_primary"
+                    app:backgroundTint="@color/accent_red"
+                    app:cornerRadius="10dp"/>
+            </LinearLayout>
+
+            <!-- Hardcoded heirs -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <ImageView android:layout_width="46dp" android:layout_height="46dp"
+                        android:src="@drawable/ic_avatar_placeholder" android:background="@drawable/shape_avatar_circle" android:scaleType="centerCrop"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Sara Khan" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Spouse" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginTop="2dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="House in DHA, 50% of savings, Car" android:textColor="@color/accent_red"
+                            android:textSize="11sp" android:layout_marginTop="4dp" android:maxLines="1" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <ImageView android:layout_width="46dp" android:layout_height="46dp"
+                        android:src="@drawable/ic_avatar_placeholder" android:background="@drawable/shape_avatar_circle" android:scaleType="centerCrop"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Ahmed Khan" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Brother" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginTop="2dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Plot in Bahria Town, 50% of savings" android:textColor="@color/accent_red"
+                            android:textSize="11sp" android:layout_marginTop="4dp" android:maxLines="1" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ASSET ASSIGNMENTS SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asset_assignments"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Hardcoded asset assignments -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+                        android:background="@drawable/bg_icon_circle" android:gravity="center">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                            android:src="@drawable/ic_estate" app:tint="@color/accent_warning"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="House DHA Phase 5" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Assigned to: Sara Khan (Spouse)" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PKR 6.5M" android:textColor="@color/accent_safe"
+                        android:textSize="13sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+                        android:background="@drawable/bg_icon_circle" android:gravity="center">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                            android:src="@drawable/ic_assets" app:tint="@color/accent_warning"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Plot Bahria Town" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Assigned to: Ahmed Khan (Brother)" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PKR 2.0M" android:textColor="@color/accent_safe"
+                        android:textSize="13sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Save Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save_estate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/bg_button_primary"
+                android:text="@string/save_estate_details"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.08"
+                android:stateListAnimator="@null"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

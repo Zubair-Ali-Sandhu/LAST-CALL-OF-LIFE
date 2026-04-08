@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="96dp">
+
+        <!-- Profile card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_profile_preview"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp" android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius_large"
+            app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical">
+                <ImageView android:id="@+id/iv_profile_photo"
+                    android:layout_width="52dp" android:layout_height="52dp"
+                    android:src="@drawable/ic_avatar_placeholder"
+                    android:background="@drawable/shape_avatar_circle"
+                    android:scaleType="centerCrop"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/tv_profile_name" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Your Name"
+                        android:textColor="@color/text_primary" android:textSize="17sp"
+                        android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:id="@+id/tv_profile_phone" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="+92 300 0000000"
+                        android:textColor="@color/text_secondary" android:textSize="13sp"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+                <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                    android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CHECK-IN GROUP -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="10dp"
+            android:text="CHECK-IN" android:textColor="@color/text_secondary" android:textSize="10sp"
+            android:letterSpacing="0.15" android:fontFamily="@font/montserrat_bold"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="4dp">
+
+                <LinearLayout android:id="@+id/pref_checkin_time"
+                    android:layout_width="match_parent" android:layout_height="60dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_schedule" app:tint="@color/accent_red"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp"
+                        android:text="Daily Check-In Time"
+                        android:textColor="@color/text_primary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tv_checkin_time_value"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="09:00 AM" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/border_subtle" android:layout_marginHorizontal="18dp"/>
+
+                <LinearLayout android:id="@+id/pref_grace_period"
+                    android:layout_width="match_parent" android:layout_height="60dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_timer" app:tint="@color/accent_warning"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp"
+                        android:text="Grace Period"
+                        android:textColor="@color/text_primary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tv_grace_value"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="3 hours" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SECURITY GROUP -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="10dp"
+            android:text="SECURITY" android:textColor="@color/text_secondary" android:textSize="10sp"
+            android:letterSpacing="0.15" android:fontFamily="@font/montserrat_bold"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="4dp">
+
+                <LinearLayout android:id="@+id/pref_security"
+                    android:layout_width="match_parent" android:layout_height="60dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_fingerprint" app:tint="@color/accent_red"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp"
+                        android:text="Security Settings"
+                        android:textColor="@color/text_primary" android:textSize="14sp"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/border_subtle" android:layout_marginHorizontal="18dp"/>
+
+                <LinearLayout android:id="@+id/pref_notifications"
+                    android:layout_width="match_parent" android:layout_height="60dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_notifications" app:tint="#4A90E2"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp"
+                        android:text="Notification Settings"
+                        android:textColor="@color/text_primary" android:textSize="14sp"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/border_subtle" android:layout_marginHorizontal="18dp"/>
+
+                <LinearLayout android:id="@+id/pref_backup"
+                    android:layout_width="match_parent" android:layout_height="60dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_backup" app:tint="@color/accent_safe"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp"
+                        android:text="Backup &amp; Restore"
+                        android:textColor="@color/text_primary" android:textSize="14sp"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ACCOUNT -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="10dp"
+            android:text="ACCOUNT" android:textColor="@color/text_secondary" android:textSize="10sp"
+            android:letterSpacing="0.15" android:fontFamily="@font/montserrat_bold"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:layout_marginHorizontal="20dp" android:layout_marginBottom="12dp"
+            android:text="Sign Out" android:textColor="@color/accent_red"
+            app:backgroundTint="#1AFF2D55"
+            app:strokeColor="#FF2D5540" app:strokeWidth="1dp"
+            app:cornerRadius="14dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete_account"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="Delete Account &amp; All Data"
+            android:textColor="@color/text_primary"
+            app:backgroundTint="#3D0000"
+            app:cornerRadius="14dp"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

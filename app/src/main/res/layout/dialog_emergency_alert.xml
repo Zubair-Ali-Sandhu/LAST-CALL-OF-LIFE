@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog_rounded"
+    android:padding="28dp"
+    android:gravity="center">
+
+    <!-- Pulsing icon ring -->
+    <LinearLayout android:layout_width="80dp" android:layout_height="80dp"
+        android:gravity="center" android:background="@drawable/bg_icon_circle_accent"
+        android:layout_marginBottom="20dp">
+        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+            android:src="@drawable/ic_sos_alert" app:tint="@color/accent_red"/>
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="EMERGENCY SOS IMMINENT"
+        android:textColor="@color/accent_red" android:textSize="18sp"
+        android:fontFamily="@font/montserrat_bold" android:letterSpacing="0.05"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Your grace period is expiring. If you don't confirm you are safe, all emergency contacts will be notified and your location will be shared."
+        android:textColor="@color/text_secondary" android:textSize="14sp"
+        android:lineSpacingMultiplier="1.5"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView android:id="@+id/tv_countdown"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="00:45"
+        android:textColor="@color/accent_red" android:textSize="52sp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:layout_marginBottom="24dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_i_am_safe"
+        android:layout_width="match_parent" android:layout_height="58dp"
+        android:background="@drawable/bg_button_safe"
+        android:text="✓  I AM SAFE — CANCEL SOS"
+        android:textColor="@color/text_primary" android:textSize="15sp"
+        android:fontFamily="@font/montserrat_bold" android:letterSpacing="0.05"
+        android:stateListAnimator="@null"
+        android:layout_marginBottom="12dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_call_emergency"
+        android:layout_width="match_parent" android:layout_height="52dp"
+        android:text="CALL EMERGENCY SERVICES (911)"
+        android:textColor="@color/accent_red" android:textSize="13sp"
+        android:fontFamily="@font/montserrat_bold"
+        app:backgroundTint="#0D0F1A"
+        app:strokeColor="#FF2D5540" app:strokeWidth="1dp"
+        app:cornerRadius="14dp"/>
+</LinearLayout>

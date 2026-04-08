@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_primary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/text_primary"
+        app:title="@string/threats_title"
+        app:titleTextColor="@color/text_primary"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_xs"
+        app:singleSelection="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <com.google.android.material.chip.Chip android:id="@+id/chip_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chip_all" android:checked="true" style="@style/Widget.LastCall.Chip.Filter"/>
+        <com.google.android.material.chip.Chip android:id="@+id/chip_critical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chip_critical" style="@style/Widget.LastCall.Chip.Filter"/>
+        <com.google.android.material.chip.Chip android:id="@+id/chip_high" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chip_high" style="@style/Widget.LastCall.Chip.Filter"/>
+        <com.google.android.material.chip.Chip android:id="@+id/chip_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chip_medium" style="@style/Widget.LastCall.Chip.Filter"/>
+        <com.google.android.material.chip.Chip android:id="@+id/chip_low" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chip_low" style="@style/Widget.LastCall.Chip.Filter"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/chip_group_filter"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/page_padding_h"
+            android:paddingTop="@dimen/spacing_md"
+            android:paddingBottom="96dp">
+
+            <!-- L10: ConstraintLayout with Flow helper — Tag Cloud for threat categories -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="THREAT CATEGORIES"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_blackmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blackmail"
+                    android:textColor="@color/accent_red"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="#1AFF2D55"
+                    app:chipStrokeColor="#FF2D5540"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_harassment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harassment"
+                    android:textColor="@color/accent_warning"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="#1AFFB800"
+                    app:chipStrokeColor="#FFB80040"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_stalking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stalking"
+                    android:textColor="@color/accent_red"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="#1AFF2D55"
+                    app:chipStrokeColor="#FF2D5540"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_fraud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Financial Fraud"
+                    android:textColor="@color/accent_warning"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="#1AFFB800"
+                    app:chipStrokeColor="#FFB80040"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_domestic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Domestic Violence"
+                    android:textColor="@color/accent_red"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="#1AFF2D55"
+                    app:chipStrokeColor="#FF2D5540"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_property"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Property Dispute"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/bg_card"
+                    app:chipStrokeColor="@color/border_subtle"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_cyber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cyber Threat"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/bg_card"
+                    app:chipStrokeColor="@color/border_subtle"
+                    app:chipStrokeWidth="1dp"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tag_legal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Legal Action"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/bg_card"
+                    app:chipStrokeColor="@color/border_subtle"
+                    app:chipStrokeWidth="1dp"/>
+
+                <!-- Flow helper widget — wraps chips to next line automatically -->
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow_threat_tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:flow_wrapMode="chain"
+                    app:flow_horizontalStyle="packed"
+                    app:flow_horizontalGap="8dp"
+                    app:flow_verticalGap="4dp"
+                    app:flow_horizontalAlign="start"
+                    app:constraint_referenced_ids="tag_blackmail,tag_harassment,tag_stalking,tag_fraud,tag_domestic,tag_property,tag_cyber,tag_legal"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Hardcoded threat entries -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="THREAT ENTRIES"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <!-- Threat 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Business Partner Dispute"
+                            android:textColor="@color/text_primary" android:textSize="15sp"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="CRITICAL" android:textColor="@color/text_primary"
+                            android:textSize="10sp" android:fontFamily="@font/montserrat_bold"
+                            app:chipBackgroundColor="#8B0000" app:chipMinHeight="26dp" app:chipCornerRadius="6dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Imran Malik has been threatening legal action over the shop ownership. He has copies of old agreements that may be used against my family."
+                        android:textColor="@color/text_secondary" android:textSize="13sp"
+                        android:maxLines="2" android:ellipsize="end" android:lineSpacingMultiplier="1.4" android:layout_marginBottom="12dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <ImageView android:layout_width="12dp" android:layout_height="12dp"
+                            android:src="@drawable/ic_calendar" app:tint="@color/text_tertiary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp" android:text="Last updated: Feb 28, 2026"
+                            android:textColor="@color/text_tertiary" android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Threat 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Online Harassment"
+                            android:textColor="@color/text_primary" android:textSize="15sp"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="HIGH" android:textColor="@color/accent_warning"
+                            android:textSize="10sp" android:fontFamily="@font/montserrat_bold"
+                            app:chipBackgroundColor="#1AFFB800" app:chipMinHeight="26dp" app:chipCornerRadius="6dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Anonymous accounts on social media have been sending threatening messages. Screenshots and evidence saved in vault."
+                        android:textColor="@color/text_secondary" android:textSize="13sp"
+                        android:maxLines="2" android:ellipsize="end" android:lineSpacingMultiplier="1.4" android:layout_marginBottom="12dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <ImageView android:layout_width="12dp" android:layout_height="12dp"
+                            android:src="@drawable/ic_calendar" app:tint="@color/text_tertiary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp" android:text="Last updated: Jan 10, 2026"
+                            android:textColor="@color/text_tertiary" android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_threat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/page_padding_h"
+        android:layout_marginBottom="@dimen/page_padding_v"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_threat_title"
+        app:backgroundTint="@color/accent_red"
+        app:tint="@color/text_primary"
+        app:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

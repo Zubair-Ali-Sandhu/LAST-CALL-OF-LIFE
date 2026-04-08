@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_primary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/text_primary"
+        app:title="@string/medical_title"
+        app:titleTextColor="@color/text_primary"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/page_padding_h"
+            android:paddingTop="@dimen/spacing_md"
+            android:paddingBottom="@dimen/spacing_2xl">
+
+            <!-- Blood Type Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                android:text="@string/blood_type_header"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                style="@style/Widget.LastCall.ExposedDropdown"
+                android:hint="@string/select_blood_type">
+
+                <AutoCompleteTextView
+                    android:id="@+id/sp_blood_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/input_height"
+                    android:inputType="none"
+                    android:textColor="@color/text_primary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Chronic Conditions Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/chronic_conditions"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.15"
+                    android:fontFamily="@font/montserrat_bold"/>
+
+                <ImageView
+                    android:id="@+id/btn_add_condition"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_add_circle"
+                    android:contentDescription="@string/add_asset"
+                    app:tint="@color/accent_red"/>
+            </LinearLayout>
+
+            <!-- Hardcoded conditions -->
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hypertension (High BP)"
+                android:textColor="@color/accent_red"
+                android:textSize="12sp"
+                app:chipBackgroundColor="#1AFF2D55"
+                app:chipStrokeColor="#FF2D5540"
+                app:chipStrokeWidth="1dp"
+                app:closeIconVisible="true"
+                app:closeIconTint="@color/accent_red"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type 2 Diabetes"
+                android:textColor="@color/accent_warning"
+                android:textSize="12sp"
+                app:chipBackgroundColor="#1AFFB800"
+                app:chipStrokeColor="#FFB80040"
+                app:chipStrokeWidth="1dp"
+                app:closeIconVisible="true"
+                app:closeIconTint="@color/accent_warning"
+                android:layout_marginBottom="@dimen/page_padding_v"/>
+
+            <!-- Current Medications Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/current_medications"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.15"
+                    android:fontFamily="@font/montserrat_bold"/>
+
+                <ImageView
+                    android:id="@+id/btn_add_medication"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_add_circle"
+                    android:contentDescription="@string/add_asset"
+                    app:tint="@color/accent_red"/>
+            </LinearLayout>
+
+            <!-- Hardcoded medications -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="40dp" android:layout_height="40dp"
+                        android:background="@drawable/bg_icon_circle_accent" android:gravity="center">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_medical" app:tint="@color/accent_red"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Metformin" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="500mg · Twice daily" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dr. Aslam" android:textColor="@color/text_secondary" android:textSize="11sp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/page_padding_v"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="40dp" android:layout_height="40dp"
+                        android:background="@drawable/bg_icon_circle_accent" android:gravity="center">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_medical" app:tint="@color/accent_red"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Amlodipine" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="5mg · Once daily (morning)" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dr. Aslam" android:textColor="@color/text_secondary" android:textSize="11sp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Allergies Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/allergies_header"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.15"
+                    android:fontFamily="@font/montserrat_bold"/>
+
+                <ImageView
+                    android:id="@+id/btn_add_allergy"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_add_circle"
+                    android:contentDescription="@string/add_asset"
+                    app:tint="@color/accent_red"/>
+            </LinearLayout>
+
+            <!-- Hardcoded allergies -->
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penicillin"
+                android:textColor="@color/accent_red"
+                android:textSize="12sp"
+                app:chipBackgroundColor="#1AFF2D55"
+                app:chipStrokeColor="#FF2D5540"
+                app:chipStrokeWidth="1dp"
+                app:closeIconVisible="true"
+                app:closeIconTint="@color/accent_red"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shellfish"
+                android:textColor="@color/accent_warning"
+                android:textSize="12sp"
+                app:chipBackgroundColor="#1AFFB800"
+                app:chipStrokeColor="#FFB80040"
+                app:chipStrokeWidth="1dp"
+                app:closeIconVisible="true"
+                app:closeIconTint="@color/accent_warning"
+                android:layout_marginBottom="@dimen/page_padding_v"/>
+
+            <!-- Organ Donor Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/page_padding_v"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/border_subtle"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/organ_donor"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/montserrat_bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/organ_donor_desc"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"/>
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/toggle_organ_donor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.LastCall.Switch"/>
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_upload_dnr"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="@string/upload_advance_directive"
+                        android:textSize="13sp"
+                        android:textColor="@color/accent_red"
+                        app:backgroundTint="@color/bg_primary"
+                        app:strokeColor="@color/border_accent"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_upload"
+                        app:iconTint="@color/accent_red"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Save Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save_medical"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/bg_button_primary"
+                android:text="@string/save_medical_profile"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.08"
+                android:stateListAnimator="@null"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

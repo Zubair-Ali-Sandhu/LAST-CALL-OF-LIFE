@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingBottom="40dp">
+
+        <!-- Vault owner card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/border_subtle"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="18dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_vault_lock_open"
+                    android:background="@drawable/bg_icon_circle"
+                    android:padding="7dp"
+                    app:tint="@color/accent_safe"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/tv_vault_owner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="John Doe's Vault" android:textColor="@color/text_primary" android:textSize="16sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:id="@+id/tv_last_updated" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Last updated: Jan 15, 2025" android:textColor="@color/text_secondary" android:textSize="12sp" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UNLOCKED"
+                    android:textColor="@color/accent_safe"
+                    android:textSize="11sp"
+                    app:chipBackgroundColor="#1A00D68F"
+                    app:chipMinHeight="28dp"
+                    app:chipStrokeColor="#00D68F40"
+                    app:chipStrokeWidth="1dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="VAULT MODULES"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <!-- L6: GridLayout — 2 columns, "Finances" card spans 2 columns -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="false">
+
+            <!-- MODULE 1: Finances — spans 2 columns (layout_columnSpan) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="#1AFF2D55"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="#FF2D5540"
+                app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                            android:src="@drawable/ic_finance"
+                            android:background="@drawable/bg_icon_circle_accent"
+                            android:padding="9dp" app:tint="@color/accent_red"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_check_circle" app:tint="@color/accent_safe"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Finances" android:textColor="@color/text_primary"
+                        android:textSize="16sp" android:fontFamily="@font/montserrat_bold"
+                        android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Debts, assets, bank accounts and insurance policies"
+                        android:textColor="@color/text_secondary" android:textSize="12sp"
+                        android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Updated: Mar 6, 2026" android:textColor="@color/accent_safe"
+                        android:textSize="10sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MODULE 2: Medical -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="14dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                            android:src="@drawable/ic_medical" android:background="@drawable/bg_icon_circle_accent"
+                            android:padding="9dp" app:tint="@color/accent_red"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_check_circle" app:tint="@color/accent_safe"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Medical" android:textColor="@color/text_primary" android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_bold" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Blood type, meds, allergies" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:maxLines="2" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Updated: Mar 1, 2026" android:textColor="@color/accent_safe"
+                        android:textSize="10sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MODULE 3: Estate -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="14dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                            android:src="@drawable/ic_estate" android:background="@drawable/bg_icon_circle_accent"
+                            android:padding="9dp" app:tint="@color/accent_red"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_check_circle" app:tint="@color/text_tertiary"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Estate" android:textColor="@color/text_primary" android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_bold" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Will, heirs, executor" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:maxLines="2" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Updated: Never" android:textColor="@color/accent_red"
+                        android:textSize="10sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MODULE 4: Wishes -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="14dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                            android:src="@drawable/ic_wishes" android:background="@drawable/bg_icon_circle_accent"
+                            android:padding="9dp" app:tint="@color/accent_red"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_check_circle" app:tint="@color/accent_safe"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Final Wishes" android:textColor="@color/text_primary" android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_bold" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Funeral, messages" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:maxLines="2" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Updated: Feb 20, 2026" android:textColor="@color/accent_safe"
+                        android:textSize="10sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MODULE 5: Threats -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="14dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                            android:src="@drawable/ic_shield" android:background="@drawable/bg_icon_circle_accent"
+                            android:padding="9dp" app:tint="@color/accent_red"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_check_circle" app:tint="@color/accent_warning"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Threats" android:textColor="@color/text_primary" android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_bold" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Threat assessments" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:maxLines="2" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Updated: Jan 15, 2026" android:textColor="@color/accent_warning"
+                        android:textSize="10sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

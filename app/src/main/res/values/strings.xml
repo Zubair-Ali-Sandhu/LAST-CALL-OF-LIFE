@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Last Call of Life</string>
+    <string name="app_tagline">Proof of Life · Secure Legacy</string>
+
+    <!-- Auth -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_subtitle">Sign in to access your vault</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+    <string name="already_account">Already have an account? Sign In</string>
+    <string name="onboarding_title">Get Started</string>
+
+    <!-- Home -->
+    <string name="status_safe">SAFE — Checked In</string>
+    <string name="status_danger">OVERDUE — Check In Now</string>
+    <string name="confirm_alive">✓  CONFIRM I\'M ALIVE</string>
+    <string name="next_checkin">NEXT CHECK-IN DUE IN</string>
+    <string name="good_morning">Good Morning,</string>
+    <string name="status_label">STATUS</string>
+    <string name="last_checkin_placeholder">Last check-in: Today, 09:45 AM</string>
+    <string name="countdown_placeholder">18:24:36</string>
+    <string name="confirm_alive_now">✓  CONFIRM I\'M ALIVE NOW</string>
+    <string name="checkin_status_title">Check-In Status</string>
+    <string name="contact_notification_status">CONTACT NOTIFICATION STATUS</string>
+    <string name="next_due_placeholder">Next check-in due in 18h 24m</string>
+
+    <!-- Emergency Contacts -->
+    <string name="emergency_contacts_header">EMERGENCY CONTACTS</string>
+    <string name="contacts_notified_placeholder">5 contacts notified on SOS</string>
+    <string name="contacts_info_text">Up to 5 contacts get SOS alerts &amp; vault OTPs</string>
+    <string name="no_contacts_title">No Contacts Yet</string>
+    <string name="no_contacts_desc">Add trusted contacts who will be alerted in an emergency</string>
+    <string name="save_contact">SAVE CONTACT</string>
+    <string name="sos_alert_will_be_sent">This person will receive SOS alerts</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="notification_permissions">NOTIFICATION PERMISSIONS</string>
+    <string name="notify_daily_checkin">Notify on daily check-in</string>
+    <string name="notify_sos_emergency">Notify on SOS emergency</string>
+    <string name="vault_access_on_sos">Vault access on SOS</string>
+    <string name="vault_access_sos_desc">Contact receives OTP to access vault</string>
+    <string name="daily_checkin_notify">Daily check-in notify</string>
+    <string name="sos_emergency_notify">SOS emergency notify</string>
+    <string name="test_alert">Test Alert</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="notification_settings_label">NOTIFICATION SETTINGS</string>
+
+    <!-- Recent Activity -->
+    <string name="recent_activity">RECENT ACTIVITY</string>
+
+    <!-- Vault -->
+    <string name="vault_title">SECURE LEGACY VAULT</string>
+    <string name="vault_locked">LOCKED  ·  AES-256 Encrypted</string>
+    <string name="unlock_vault">🔓  UNLOCK VAULT</string>
+    <string name="vault_info_text">Military-grade encryption protects your vault. Only you and designated contacts can access this data.</string>
+    <string name="last_accessed_never">Last accessed: Never</string>
+    <string name="modules_configured">6 modules configured</string>
+    <string name="received_emergency_otp">I Received an Emergency OTP</string>
+    <string name="vault_modules_title">Vault Modules</string>
+    <string name="vault_modules_header">VAULT MODULES</string>
+    <string name="unlocked_label">UNLOCKED</string>
+    <string name="vault_owner_placeholder">John Doe\'s Vault</string>
+    <string name="last_updated_placeholder">Last updated: Jan 15, 2025</string>
+
+    <!-- Vault Auth -->
+    <string name="registered_phone_hint">Registered Phone Number</string>
+    <string name="enter_6_digit_otp">Enter 6-Digit OTP</string>
+    <string name="attempts_remaining">5 attempts remaining</string>
+    <string name="verify_access_vault">VERIFY &amp; ACCESS VAULT</string>
+
+    <!-- Threats -->
+    <string name="threats_title">Security &amp; Threats</string>
+    <string name="add_threat_title">Log a Threat</string>
+    <string name="threat_encrypted_note">This entry is encrypted and stored securely</string>
+    <string name="threat_title_hint">Threat Title *</string>
+    <string name="detailed_description_hint">Detailed Description *</string>
+    <string name="threat_level_hint">Threat Level *</string>
+    <string name="known_individuals_hint">Known Individuals Involved</string>
+    <string name="locations_to_avoid_hint">Locations to Avoid</string>
+    <string name="incident_dates">INCIDENT DATES</string>
+    <string name="add_date">+ Add Date</string>
+    <string name="attach_evidence">Attach Evidence (Photos/Docs)</string>
+    <string name="save_threat_entry">SAVE THREAT ENTRY</string>
+    <string name="no_threats_title">No Threats Logged</string>
+    <string name="no_threats_desc">Document threats, risky individuals, or dangerous situations here.</string>
+    <string name="chip_all">All</string>
+    <string name="chip_critical">Critical</string>
+    <string name="chip_high">High</string>
+    <string name="chip_medium">Medium</string>
+    <string name="chip_low">Low</string>
+
+    <!-- Medical -->
+    <string name="medical_title">Medical Profile</string>
+    <string name="blood_type_header">BLOOD TYPE</string>
+    <string name="select_blood_type">Select Blood Type</string>
+    <string name="chronic_conditions">CHRONIC CONDITIONS</string>
+    <string name="current_medications">CURRENT MEDICATIONS</string>
+    <string name="allergies_header">ALLERGIES</string>
+    <string name="organ_donor">Organ Donor</string>
+    <string name="organ_donor_desc">Consent to donate organs upon death</string>
+    <string name="upload_advance_directive">Upload Advance Directive / DNR</string>
+    <string name="save_medical_profile">SAVE MEDICAL PROFILE</string>
+
+    <!-- Assets -->
+    <string name="assets_title">Assets</string>
+
+    <!-- Finances -->
+    <string name="finances_title">Financial Obligations</string>
+    <string name="total_owed">TOTAL OWED</string>
+    <string name="to_collect">TO COLLECT</string>
+    <string name="pkr_zero">PKR 0</string>
+
+    <!-- Estate -->
+    <string name="estate_title">Estate Planning</string>
+    <string name="estate_subtitle">Executor details, heirs &amp; asset assignments</string>
+    <string name="estate_executor">ESTATE EXECUTOR</string>
+    <string name="executor_name_hint">Executor Full Name</string>
+    <string name="executor_phone_hint">Executor Phone</string>
+    <string name="upload_will">Upload Will Document</string>
+    <string name="heirs_beneficiaries">HEIRS &amp; BENEFICIARIES</string>
+    <string name="add_heir">+ Add Heir</string>
+    <string name="asset_assignments">ASSET ASSIGNMENTS</string>
+    <string name="save_estate_details">SAVE ESTATE DETAILS</string>
+
+    <!-- Final Wishes -->
+    <string name="final_wishes_title">Final Wishes</string>
+    <string name="final_wishes_subtitle">Your personal wishes, documented and secured</string>
+    <string name="funeral_preferences">FUNERAL PREFERENCES</string>
+    <string name="burial_type_hint">Burial Type</string>
+    <string name="funeral_instructions_hint">Funeral Instructions &amp; Special Requests</string>
+    <string name="last_wishes_header">LAST WISHES</string>
+    <string name="last_wishes_hint">Write your final wishes…</string>
+    <string name="personal_messages_header">PERSONAL MESSAGES TO CONTACTS</string>
+    <string name="save_final_wishes">SAVE FINAL WISHES</string>
+
+    <!-- Settings -->
+    <string name="profile_title">Edit Profile</string>
+    <string name="notification_settings_title">Notification Settings</string>
+    <string name="security_settings_title">Security Settings</string>
+    <string name="checkin_header">CHECK-IN</string>
+    <string name="daily_checkin_time">Daily Check-In Time</string>
+    <string name="checkin_time_default">09:00 AM</string>
+    <string name="grace_period">Grace Period</string>
+    <string name="grace_period_default">3 hours</string>
+    <string name="security_header">SECURITY</string>
+    <string name="security_settings">Security Settings</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="backup_restore">Backup &amp; Restore</string>
+    <string name="account_header">ACCOUNT</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="delete_account">Delete Account &amp; All Data</string>
+    <string name="your_name_placeholder">Your Name</string>
+    <string name="phone_placeholder">+92 300 0000000</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="full_name_required">Full Name *</string>
+    <string name="phone_number_label">Phone Number</string>
+    <string name="email_address_label">Email Address</string>
+    <string name="short_bio_hint">Short Bio (Optional)</string>
+    <string name="save_profile">SAVE PROFILE</string>
+
+    <!-- Notification Settings Detail -->
+    <string name="checkin_timing">CHECK-IN TIMING</string>
+    <string name="notify_contacts_on_checkin">Notify contacts on check-in</string>
+    <string name="alert_channels">ALERT CHANNELS</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="sms_alerts">SMS Alerts</string>
+    <string name="automated_phone_calls">Automated Phone Calls</string>
+
+    <!-- Security Settings Detail -->
+    <string name="biometric_app_lock">BIOMETRIC &amp; APP LOCK</string>
+    <string name="biometric_unlock">Biometric Unlock</string>
+    <string name="biometric_unlock_desc">Use fingerprint or face to unlock</string>
+    <string name="app_lock">App Lock</string>
+    <string name="app_lock_desc">Require auth on every app open</string>
+    <string name="change_pin">Change PIN</string>
+    <string name="auto_lock_header">AUTO-LOCK</string>
+    <string name="auto_lock_hint">Auto-Lock After</string>
+    <string name="change_password">CHANGE PASSWORD</string>
+
+    <!-- SOS -->
+    <string name="emergency_sos">EMERGENCY SOS IMMINENT</string>
+    <string name="i_am_safe">✓  I AM SAFE — CANCEL SOS</string>
+    <string name="call_911">CALL EMERGENCY SERVICES (911)</string>
+    <string name="sos_alert_dispatch">SOS Alert Dispatch</string>
+    <string name="sos_alerts_sent_to_all">Emergency alerts sent to all contacts</string>
+    <string name="resend_all">Resend All</string>
+    <string name="sos_grace_text">Your grace period is expiring. If you don\'t confirm you are safe, all emergency contacts will be notified and your location will be shared.</string>
+    <string name="confirm_checkin_title">Confirm Check-In</string>
+    <string name="confirm_checkin_desc">This confirms you are safe and resets your 24-hour check-in timer. Your emergency contacts will be notified.</string>
+    <string name="yes_im_alive">YES, I\'M ALIVE</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Nav labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_vault">Vault</string>
+    <string name="nav_settings">Settings</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="sign_in_to_access_your_vault">Sign in to access your vault</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="i_m_alive">I\'M ALIVE</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_optional">Email (Optional)</string>
+    <string name="add_emergency_contact">Add Emergency Contact</string>
+    <string name="relationship">Relationship</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="add_asset">Add Asset</string>
+    <string name="all_asset_data_is_aes_256_encrypted">All asset data is AES-256 encrypted</string>
+    <string name="asset_category">Asset Category *</string>
+    <string name="asset_name">Asset Name *</string>
+    <string name="description">Description</string>
+    <string name="location_address">Location / Address</string>
+    <string name="estimated_value_home_currency">Estimated Value (Home Currency)</string>
+    <string name="attach_documents_photos">Attach Documents / Photos</string>
+    <string name="save_asset">SAVE ASSET</string>
+    <string name="verify">VERIFY</string>
+    <string name="verify_your_number">Verify Your Number</string>
+    <string name="we_sent_a_6_digit_code_to_n_92_300_xxxxxxx">We sent a 6-digit code to\n+92 300 xxxxxxx</string>
+    <string name="didn_t_receive_it">Didn\'t receive it?</string>
+    <string name="resend_59s">Resend (59s)</string>
+    <string name="set_up_your_proof_of_life_profile">Set up your proof-of-life profile</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="last_call_of_life">LAST CALL OF LIFE</string>
+    <string name="proof_of_life_secure_legacy">Proof of Life · Secure Legacy</string>
+    <string name="session_expires_in_23_45_00">Session expires in: 23:45:00</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="emergency_vault_access_granted">Emergency vault access granted</string>
+    <string name="accessible_modules">ACCESSIBLE MODULES</string>
+    <string name="read_only">READ ONLY</string>
+    <string name="revoke_access">Revoke Access</string>
+    <string name="done">Done</string>
+    <string name="biometric_login">Biometric login</string>
+    <string name="vault_verification">Vault Verification</string>
+    <string name="enter_your_phone_number_and_the_otp_received_via_sms_to_access_the_vault">Enter your phone number and the OTP received via SMS to access the vault.</string>
+
+    <!-- Accessibility -->
+    <string name="logo_desc">App Logo</string>
+    <string name="profile_photo_desc">Profile Photo</string>
+    <string name="avatar_desc">Contact Avatar</string>
+    <string name="navigate_back_desc">Navigate Back</string>
+    <string name="status_icon_desc">Status Icon</string>
+    <string name="alert_icon_desc">Alert Icon</string>
+    <string name="vault_icon_desc">Vault Lock Icon</string>
+    <string name="module_icon_desc">Module Icon</string>
+    <string name="category_icon_desc">Category Icon</string>
+    <string name="options_menu_desc">More Options</string>
+    <string name="remove_item_desc">Remove Item</string>
+    <string name="expand_desc">Expand Details</string>
+    <string name="priority_badge_desc">Priority Badge</string>
+    <string name="onboarding_illustration_desc">Feature Illustration</string>
+    <string name="sos_icon_desc">SOS Alert Icon</string>
+</resources>

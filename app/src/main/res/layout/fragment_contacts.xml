@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_primary"
+        app:title="@string/add_emergency_contact"
+        app:titleTextColor="@color/text_primary"
+        app:titleTextAppearance="@style/TextAppearance.LastCall.CardTitle"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Info bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_contact_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/page_padding_h"
+        android:layout_marginTop="@dimen/spacing_sm"
+        app:cardBackgroundColor="@color/bg_card"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/border_subtle"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_md"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_sos_alert"
+                android:contentDescription="@string/alert_icon_desc"
+                app:tint="@color/accent_warning"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="@string/contacts_info_text"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tv_contact_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_count_badge"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="0/5"
+                android:textColor="@color/accent_red"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserrat_bold"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/card_contact_info"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/page_padding_h"
+            android:paddingBottom="96dp">
+
+            <!-- Contact 1: Sara -->
+            <include layout="@layout/item_contact"/>
+
+            <!-- Contact 2: Ahmed (inline to show different data) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/iv_avatar_2" android:layout_width="50dp" android:layout_height="50dp"
+                        android:layout_alignParentStart="true" android:layout_centerVertical="true"
+                        android:src="@drawable/ic_avatar_placeholder" android:background="@drawable/shape_avatar_circle" android:scaleType="centerCrop"/>
+                    <TextView android:id="@+id/tv_name_2" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/iv_avatar_2" android:layout_marginStart="14dp" android:layout_marginTop="2dp"
+                        android:text="Ahmed Khan" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:id="@+id/tv_rel_2" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/iv_avatar_2" android:layout_below="@id/tv_name_2"
+                        android:layout_marginStart="14dp" android:layout_marginTop="2dp"
+                        android:text="Brother" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true" android:layout_centerVertical="true"
+                        android:text="#2" android:textSize="12sp" android:textColor="@color/accent_safe"
+                        app:chipBackgroundColor="#1A00D68F" app:chipMinHeight="28dp" app:chipStrokeColor="#00D68F40" app:chipStrokeWidth="1dp" app:chipCornerRadius="20dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Contact 3: Fatima -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/iv_avatar_3" android:layout_width="50dp" android:layout_height="50dp"
+                        android:layout_alignParentStart="true" android:layout_centerVertical="true"
+                        android:src="@drawable/ic_avatar_placeholder" android:background="@drawable/shape_avatar_circle" android:scaleType="centerCrop"/>
+                    <TextView android:id="@+id/tv_name_3" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/iv_avatar_3" android:layout_marginStart="14dp" android:layout_marginTop="2dp"
+                        android:text="Fatima Begum" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:id="@+id/tv_rel_3" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/iv_avatar_3" android:layout_below="@id/tv_name_3"
+                        android:layout_marginStart="14dp" android:layout_marginTop="2dp"
+                        android:text="Mother" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true" android:layout_centerVertical="true"
+                        android:text="#3" android:textSize="12sp" android:textColor="@color/accent_warning"
+                        app:chipBackgroundColor="#1AFFB800" app:chipMinHeight="28dp" app:chipStrokeColor="#FFB80040" app:chipStrokeWidth="1dp" app:chipCornerRadius="20dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Empty state -->
+    <LinearLayout
+        android:id="@+id/layout_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/spacing_2xl"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/card_contact_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_contacts_empty"
+            android:alpha="0.3"
+            android:contentDescription="@string/avatar_desc"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/no_contacts_title"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/page_padding_h"
+            android:text="@string/no_contacts_desc"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/page_padding_h"
+        android:layout_marginBottom="96dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_emergency_contact"
+        app:backgroundTint="@color/accent_red"
+        app:tint="@color/text_primary"
+        app:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

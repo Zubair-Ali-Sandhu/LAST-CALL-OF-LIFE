@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+            android:background="@drawable/bg_icon_circle"
+            android:gravity="center">
+            <ImageView android:id="@+id/iv_category_icon"
+                android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_assets" app:tint="@color/accent_warning"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="14dp"
+            android:orientation="vertical">
+            <TextView android:id="@+id/tv_asset_name"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Asset Name" android:textColor="@color/text_primary"
+                android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+            <TextView android:id="@+id/tv_category"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Real Estate" android:textColor="@color/text_secondary"
+                android:textSize="12sp" android:layout_marginTop="2dp"/>
+            <TextView android:id="@+id/tv_location"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DHA Phase 5, Lahore" android:textColor="@color/text_tertiary"
+                android:textSize="11sp" android:layout_marginTop="2dp"
+                android:maxLines="1" android:ellipsize="end"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="end">
+            <TextView android:id="@+id/tv_asset_value"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PKR 1.5M" android:textColor="@color/accent_safe"
+                android:textSize="14sp" android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="6dp"/>
+            <ImageView android:id="@+id/btn_options"
+                android:layout_width="18dp" android:layout_height="18dp"
+                android:src="@drawable/ic_more_vert" app:tint="@color/text_tertiary"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

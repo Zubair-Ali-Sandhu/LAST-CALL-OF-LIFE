@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Top accent glow -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@drawable/bg_top_glow"
+        android:alpha="0.18" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="28dp"
+            android:paddingTop="72dp"
+            android:paddingBottom="40dp">
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/iv_logo_small"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_alive_button"
+                android:contentDescription="@string/app_name" />
+
+            <!-- Welcome title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="@string/welcome_back"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/sign_in_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Phone row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="14dp">
+
+                <!-- Country Code Picker -->
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp_code"
+                    android:layout_width="100dp"
+                    android:layout_height="58dp"
+                    android:background="@drawable/bg_input_field"
+                    android:paddingHorizontal="8dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    app:ccp_defaultNameCode="PK"
+                    app:ccp_showFullName="false"
+                    app:ccp_showNameCode="true"
+                    app:ccp_contentColor="@color/text_primary" />
+
+                <!-- Phone TextInputLayout -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    style="@style/Widget.LastCall.TextInputLayout"
+                    android:hint="@string/phone_number"
+                    app:boxStrokeColor="@color/stroke_color_selector">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:inputType="phone"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- Password field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                style="@style/Widget.LastCall.TextInputLayout"
+                android:hint="@string/password"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/accent_red"
+                app:boxStrokeColor="@color/stroke_color_selector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Forgot password -->
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp"
+                android:text="@string/forgot_password"
+                android:textColor="@color/accent_red"
+                android:textSize="13sp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <!-- Sign In button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@drawable/bg_button_primary"
+                android:text="@string/sign_in"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.08"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
+                android:foreground="?attr/selectableItemBackground" />
+
+            <!-- Biometric button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_biometric_login"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/biometric_login"
+                app:icon="@drawable/ic_fingerprint"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="24dp"
+                app:backgroundTint="@color/bg_card"
+                app:strokeColor="@color/border_subtle"
+                app:strokeWidth="1dp"
+                app:cornerRadius="16dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+            <!-- Register link -->
+            <TextView
+                android:id="@+id/tv_register_link"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_account"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.LastCall" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/accent_red</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorPrimaryContainer">@color/bg_card</item>
+        <item name="colorPrimaryVariant">@color/accent_red_dark</item>
+
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/accent_orange</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        <item name="colorSecondaryContainer">@color/bg_card_elevated</item>
+        <item name="colorSecondaryVariant">@color/accent_orange_dark</item>
+
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/bg_secondary</item>
+        <item name="colorSurfaceVariant">@color/bg_card</item>
+        <item name="android:colorBackground">@color/bg_primary</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorTertiary">@color/text_tertiary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Error colors -->
+        <item name="colorError">@color/status_danger</item>
+        <item name="colorOnError">@color/text_primary</item>
+        <item name="colorErrorContainer">@color/bg_card</item>
+
+        <!-- Outline colors -->
+        <item name="colorOutline">@color/border_subtle</item>
+        <item name="colorOutlineVariant">@color/border_accent</item>
+
+        <!-- Control colors -->
+        <item name="colorControlNormal">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/accent_red</item>
+        <item name="colorControlHighlight">@color/accent_red_ripple</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Ripple effect -->
+        <item name="android:colorControlHighlight">@color/accent_red_ripple</item>
+    </style>
+
+    <!-- FAB shape style -->
+    <style name="ShapeAppearance.FABLarge" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="Widget.LastCall.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/border_subtle</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="rippleColor">@color/accent_red_ripple</item>
+    </style>
+
+    <!-- Outlined text field -->
+    <style name="Widget.LastCall.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/stroke_color_selector</item>
+        <item name="boxStrokeErrorColor">@color/status_danger</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxBackgroundColor">@color/input_background</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/accent_red</item>
+        <item name="endIconTint">@color/text_secondary</item>
+        <item name="startIconTint">@color/text_secondary</item>
+    </style>
+
+    <!-- Primary button -->
+    <style name="Widget.LastCall.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/accent_red</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Button</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="rippleColor">@color/accent_red_ripple</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <!-- Secondary button -->
+    <style name="Widget.LastCall.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/border_subtle</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Button</item>
+        <item name="rippleColor">@color/accent_red_ripple</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+</resources>

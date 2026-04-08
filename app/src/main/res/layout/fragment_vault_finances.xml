@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_primary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/text_primary"
+        app:title="@string/finances_title"
+        app:titleTextColor="@color/text_primary"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="96dp">
+
+            <!-- ============================================ -->
+            <!-- L3: LinearLayout (Weighted) — 3 equal-width summary stats -->
+            <!-- ============================================ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/spacing_md"
+                android:paddingVertical="@dimen/spacing_md">
+
+                <!-- Stat 1: Total Owed -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardBackgroundColor="#1AFF2D55"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TOTAL OWED"
+                            android:textColor="@color/accent_red"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.1"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="PKR 2.8M"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stat 2: To Collect -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="6dp"
+                    app:cardBackgroundColor="#1A00D68F"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TO COLLECT"
+                            android:textColor="@color/accent_safe"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.1"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="PKR 750K"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stat 3: Net Worth -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardBackgroundColor="#1A4A90E2"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NET WORTH"
+                            android:textColor="@color/accent_blue"
+                            android:textSize="9sp"
+                            android:letterSpacing="0.1"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="PKR 12.4M"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- ============================================ -->
+            <!-- L7: TableLayout — Financial Summary with stretchColumns -->
+            <!-- ============================================ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:layout_marginBottom="10dp"
+                android:text="FINANCIAL SUMMARY"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/border_subtle"
+                app:strokeWidth="1dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1"
+                    android:padding="4dp">
+
+                    <!-- Header Row -->
+                    <TableRow android:background="@color/bg_surface">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            android:text="CATEGORY"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="12dp"
+                            android:text="ITEMS"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"
+                            android:fontFamily="@font/montserrat_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            android:text="TOTAL"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+
+                    <!-- Row: Bank Accounts -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="Bank Accounts"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="14dp"
+                            android:text="3"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="PKR 4.2M"
+                            android:textColor="@color/accent_safe"
+                            android:textSize="13sp"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border_subtle"/>
+
+                    <!-- Row: Real Estate -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="Real Estate"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="14dp"
+                            android:text="2"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="PKR 8.5M"
+                            android:textColor="@color/accent_safe"
+                            android:textSize="13sp"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border_subtle"/>
+
+                    <!-- Row: Debts Owed -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="Debts Owed"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="14dp"
+                            android:text="3"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="PKR 2.8M"
+                            android:textColor="@color/accent_red"
+                            android:textSize="13sp"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border_subtle"/>
+
+                    <!-- Row: Receivables -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="Receivables"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="14dp"
+                            android:text="2"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="PKR 750K"
+                            android:textColor="@color/accent_safe"
+                            android:textSize="13sp"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border_subtle"/>
+
+                    <!-- Row: Insurance -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="Insurance"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="14dp"
+                            android:text="2"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="PKR 5.0M"
+                            android:textColor="@color/accent_blue"
+                            android:textSize="13sp"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border_subtle"/>
+
+                    <!-- Row: Investments -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="Investments"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="14dp"
+                            android:text="4"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="14dp"
+                            android:text="PKR 2.7M"
+                            android:textColor="@color/accent_safe"
+                            android:textSize="13sp"
+                            android:gravity="end"
+                            android:fontFamily="@font/montserrat_bold"/>
+                    </TableRow>
+                </TableLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================ -->
+            <!-- DEBTS SECTION — Hardcoded Items -->
+            <!-- ============================================ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="10dp"
+                android:text="DEBTS OWED"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <!-- Debt 1: HBL Car Loan -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <View android:layout_width="4dp" android:layout_height="52dp"
+                        android:background="@color/accent_red" android:layout_marginEnd="14dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="HBL Auto Finance" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Car Loan · Honda Civic 2024" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Due: Sep 2028 · 36 EMIs left" android:textColor="@color/accent_warning"
+                            android:textSize="11sp" android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="end">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="PKR 1,800,000" android:textColor="@color/accent_red"
+                            android:textSize="14sp" android:fontFamily="@font/montserrat_bold"
+                            android:layout_marginBottom="6dp"/>
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="ACTIVE" android:textSize="10sp"
+                            android:textColor="@color/accent_safe" android:fontFamily="@font/montserrat_bold"
+                            app:chipBackgroundColor="#1A00D68F" app:chipMinHeight="24dp" app:chipCornerRadius="6dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Debt 2: Personal Loan from Uncle -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <View android:layout_width="4dp" android:layout_height="52dp"
+                        android:background="@color/accent_warning" android:layout_marginEnd="14dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Uncle Rashid" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Personal Loan · No interest" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Due: Dec 2026 · Flexible" android:textColor="@color/accent_warning"
+                            android:textSize="11sp" android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="end">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="PKR 500,000" android:textColor="@color/accent_red"
+                            android:textSize="14sp" android:fontFamily="@font/montserrat_bold"
+                            android:layout_marginBottom="6dp"/>
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="ACTIVE" android:textSize="10sp"
+                            android:textColor="@color/accent_warning" android:fontFamily="@font/montserrat_bold"
+                            app:chipBackgroundColor="#1AFFB800" app:chipMinHeight="24dp" app:chipCornerRadius="6dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Debt 3: UBL Home Loan -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <View android:layout_width="4dp" android:layout_height="52dp"
+                        android:background="@color/accent_red" android:layout_marginEnd="14dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="UBL Home Finance" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Home Loan · DHA Phase 5" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Due: Mar 2035 · 108 EMIs left" android:textColor="@color/accent_warning"
+                            android:textSize="11sp" android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PKR 500,000" android:textColor="@color/accent_red"
+                        android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================ -->
+            <!-- ASSETS SECTION -->
+            <!-- ============================================ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="10dp"
+                android:text="ASSETS"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <!-- Asset 1: House -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+                        android:background="@drawable/bg_icon_circle" android:gravity="center">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                            android:src="@drawable/ic_estate" app:tint="@color/accent_warning"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="House · DHA Phase 5" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Real Estate · Lahore" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PKR 6.5M" android:textColor="@color/accent_safe"
+                        android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Asset 2: Plot -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+                        android:background="@drawable/bg_icon_circle" android:gravity="center">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                            android:src="@drawable/ic_assets" app:tint="@color/accent_warning"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Plot · Bahria Town" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Real Estate · 10 Marla" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PKR 2.0M" android:textColor="@color/accent_safe"
+                        android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Asset 3: HBL Savings -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_md"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+                        android:background="@drawable/bg_icon_circle" android:gravity="center">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                            android:src="@drawable/ic_finance" app:tint="@color/accent_safe"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="HBL Savings Account" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Bank Account · PK36HABB0012345678901" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:layout_marginTop="2dp" android:maxLines="1" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PKR 2.1M" android:textColor="@color/accent_safe"
+                        android:textSize="14sp" android:fontFamily="@font/montserrat_bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_finance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/page_padding_h"
+        android:layout_marginBottom="@dimen/page_padding_v"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_asset"
+        app:backgroundTint="@color/accent_red"
+        app:tint="@color/text_primary"
+        app:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
