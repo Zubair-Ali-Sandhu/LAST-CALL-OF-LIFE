@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/bg_primary"
-        app:title="@string/add_emergency_contact"
+        app:title="@string/nav_contacts"
         app:titleTextColor="@color/text_primary"
         app:titleTextAppearance="@style/TextAppearance.LastCall.CardTitle"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -69,73 +69,65 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <androidx.core.widget.NestedScrollView
+    <!-- Search input -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_search"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/page_padding_h"
         android:layout_marginTop="12dp"
-        android:overScrollMode="never"
+        app:cardBackgroundColor="@color/bg_card"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/border_subtle"
+        app:strokeWidth="1dp"
         app:layout_constraintTop_toBottomOf="@id/card_contact_info"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/page_padding_h"
-            android:paddingBottom="96dp">
+            android:layout_height="46dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="14dp">
 
-            <!-- Contact 1: Sara -->
-            <include layout="@layout/item_contact"/>
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/text_secondary"
+                android:contentDescription="@string/alert_icon_desc"/>
 
-            <!-- Contact 2: Ahmed (inline to show different data) -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
-                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
-                    <ImageView android:id="@+id/iv_avatar_2" android:layout_width="50dp" android:layout_height="50dp"
-                        android:layout_alignParentStart="true" android:layout_centerVertical="true"
-                        android:src="@drawable/ic_avatar_placeholder" android:background="@drawable/shape_avatar_circle" android:scaleType="centerCrop"/>
-                    <TextView android:id="@+id/tv_name_2" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/iv_avatar_2" android:layout_marginStart="14dp" android:layout_marginTop="2dp"
-                        android:text="Ahmed Khan" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
-                    <TextView android:id="@+id/tv_rel_2" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/iv_avatar_2" android:layout_below="@id/tv_name_2"
-                        android:layout_marginStart="14dp" android:layout_marginTop="2dp"
-                        android:text="Brother" android:textColor="@color/text_secondary" android:textSize="12sp"/>
-                    <com.google.android.material.chip.Chip android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true" android:layout_centerVertical="true"
-                        android:text="#2" android:textSize="12sp" android:textColor="@color/accent_safe"
-                        app:chipBackgroundColor="#1A00D68F" app:chipMinHeight="28dp" app:chipStrokeColor="#00D68F40" app:chipStrokeWidth="1dp" app:chipCornerRadius="20dp"/>
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Contact 3: Fatima -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
-                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
-                    <ImageView android:id="@+id/iv_avatar_3" android:layout_width="50dp" android:layout_height="50dp"
-                        android:layout_alignParentStart="true" android:layout_centerVertical="true"
-                        android:src="@drawable/ic_avatar_placeholder" android:background="@drawable/shape_avatar_circle" android:scaleType="centerCrop"/>
-                    <TextView android:id="@+id/tv_name_3" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/iv_avatar_3" android:layout_marginStart="14dp" android:layout_marginTop="2dp"
-                        android:text="Fatima Begum" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/montserrat_bold"/>
-                    <TextView android:id="@+id/tv_rel_3" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/iv_avatar_3" android:layout_below="@id/tv_name_3"
-                        android:layout_marginStart="14dp" android:layout_marginTop="2dp"
-                        android:text="Mother" android:textColor="@color/text_secondary" android:textSize="12sp"/>
-                    <com.google.android.material.chip.Chip android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true" android:layout_centerVertical="true"
-                        android:text="#3" android:textSize="12sp" android:textColor="@color/accent_warning"
-                        app:chipBackgroundColor="#1AFFB800" app:chipMinHeight="28dp" app:chipStrokeColor="#FFB80040" app:chipStrokeWidth="1dp" app:chipCornerRadius="20dp"/>
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
+            <EditText
+                android:id="@+id/et_search_contacts"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Search contacts…"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:textSize="14sp"
+                android:inputType="text"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"/>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- RecyclerView for dynamic contact list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="@dimen/page_padding_h"
+        android:paddingBottom="96dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/card_search"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <!-- Empty state -->
     <LinearLayout
@@ -146,7 +138,7 @@
         android:gravity="center"
         android:padding="@dimen/spacing_2xl"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/card_contact_info"
+        app:layout_constraintTop_toBottomOf="@id/card_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">

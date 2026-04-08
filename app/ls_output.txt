@@ -1,9 +1,0 @@
-app
-build.gradle.kts
-design_map.md
-gradle
-gradle.properties
-gradlew
-gradlew.bat
-local.properties
-settings.gradle.kts
