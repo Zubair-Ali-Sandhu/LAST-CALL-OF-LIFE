@@ -103,7 +103,7 @@
     </style>
 
     <!-- L7: TableLayout header text -->
-    <style name="TextAppearance.LastCall.TableHeader">
+    <style name="TextAppearance.LastCall.TableHeader" parent="TextAppearance.Material3.LabelSmall">
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/text_secondary</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
@@ -113,7 +113,7 @@
     </style>
 
     <!-- L7: TableLayout cell text -->
-    <style name="TextAppearance.LastCall.TableCell">
+    <style name="TextAppearance.LastCall.TableCell" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:paddingTop">14dp</item>

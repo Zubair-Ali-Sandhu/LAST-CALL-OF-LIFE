@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplicationpractice.R
 import com.example.myapplicationpractice.models.VaultModule
-import com.google.android.material.chip.Chip
 
 class VaultModuleAdapter(
     private val onItemClick: (VaultModule) -> Unit
@@ -39,10 +38,10 @@ class VaultModuleAdapter(
     class ModuleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val iconView: ImageView = itemView.findViewById(R.id.iv_module_icon)
-        private val titleText: TextView = itemView.findViewById(R.id.tv_module_title)
-        private val descText: TextView = itemView.findViewById(R.id.tv_module_desc)
-        private val statusChip: Chip = itemView.findViewById(R.id.chip_module_status)
-        private val chevron: ImageView = itemView.findViewById(R.id.iv_chevron)
+        private val lockStateIcon: ImageView = itemView.findViewById(R.id.iv_lock_state)
+        private val titleText: TextView = itemView.findViewById(R.id.tv_module_name)
+        private val descText: TextView = itemView.findViewById(R.id.tv_module_description)
+        private val metaText: TextView = itemView.findViewById(R.id.tv_last_updated)
 
         fun bind(module: VaultModule) {
             iconView.setImageResource(module.iconRes)
@@ -50,12 +49,15 @@ class VaultModuleAdapter(
             descText.text = module.description
 
             if (module.isLocked) {
-                statusChip.text = "Locked"
-                statusChip.setChipBackgroundColorResource(R.color.bg_card)
-                chevron.alpha = 0.3f
+                lockStateIcon.setImageResource(R.drawable.ic_vault_lock)
+                lockStateIcon.setColorFilter(itemView.context.getColor(R.color.accent_warning))
+                metaText.text = "Locked"
+                metaText.setTextColor(itemView.context.getColor(R.color.accent_warning))
             } else {
-                statusChip.text = "${module.itemCount} items"
-                chevron.alpha = 1.0f
+                lockStateIcon.setImageResource(R.drawable.ic_check_circle)
+                lockStateIcon.setColorFilter(itemView.context.getColor(R.color.accent_safe))
+                metaText.text = "${module.itemCount} items configured"
+                metaText.setTextColor(itemView.context.getColor(R.color.accent_red))
             }
         }
     }
