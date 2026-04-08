@@ -40,7 +40,21 @@
         android:id="@+id/vaultHomeFragment"
         android:name="com.example.myapplicationpractice.fragments.VaultFragment"
         android:label="@string/nav_vault"
-        tools:layout="@layout/fragment_vault_home" />
+        tools:layout="@layout/fragment_vault_home">
+        <action
+            android:id="@+id/action_vaultHome_to_vaultModuleDetail"
+            app:destination="@id/vaultModuleDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vaultModuleDetailFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultModuleDetailFragment"
+        android:label="@string/vault_modules_title"
+        tools:layout="@layout/fragment_vault_module_detail">
+        <argument
+            android:name="vaultModule"
+            app:argType="com.example.myapplicationpractice.models.VaultModule" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"
