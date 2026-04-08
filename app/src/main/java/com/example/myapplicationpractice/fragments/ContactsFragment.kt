@@ -14,6 +14,7 @@ import com.example.myapplicationpractice.R
 import com.example.myapplicationpractice.adapters.ContactAdapter
 import com.example.myapplicationpractice.data.ContactRepository
 import com.example.myapplicationpractice.models.Contact
+import com.example.myapplicationpractice.navigation.NavKeys
 
 class ContactsFragment : Fragment(R.layout.fragment_contacts) {
 
@@ -31,7 +32,7 @@ class ContactsFragment : Fragment(R.layout.fragment_contacts) {
         adapter = ContactAdapter { contact ->
             findNavController().navigate(
                 R.id.action_contacts_to_contactDetail,
-                bundleOf("contact" to contact)
+                bundleOf(NavKeys.ARG_CONTACT to contact)
             )
         }
 

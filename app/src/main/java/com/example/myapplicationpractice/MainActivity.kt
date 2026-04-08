@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplicationpractice.R
+import com.example.myapplicationpractice.navigation.NavKeys
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_USER_NAME = "extra_user_name"
-        private const val ARG_USER_NAME = "userName"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val graph = navController.navInflater.inflate(R.navigation.nav_main)
         val startArgs = Bundle().apply {
-            putString(ARG_USER_NAME, intent.getStringExtra(EXTRA_USER_NAME).orEmpty())
+            putString(NavKeys.ARG_USER_NAME, intent.getStringExtra(EXTRA_USER_NAME).orEmpty())
         }
         navController.setGraph(graph, startArgs)
 
