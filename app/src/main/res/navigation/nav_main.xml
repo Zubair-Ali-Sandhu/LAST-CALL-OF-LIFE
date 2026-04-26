@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_contacts_to_contactDetail"
             app:destination="@id/contactDetailFragment" />
+        <action
+            android:id="@+id/action_contacts_to_addEditContact"
+            app:destination="@id/addEditContactFragment" />
     </fragment>
 
     <fragment
@@ -34,6 +37,22 @@
         <argument
             android:name="contact"
             app:argType="com.example.myapplicationpractice.models.Contact" />
+        <action
+            android:id="@+id/action_contactDetail_to_addEditContact"
+            app:destination="@id/addEditContactFragment" />
+    </fragment>
+
+    <!-- Add/Edit Contact (F3: CRUD) -->
+    <fragment
+        android:id="@+id/addEditContactFragment"
+        android:name="com.example.myapplicationpractice.fragments.AddEditContactFragment"
+        android:label="Add Contact"
+        tools:layout="@layout/fragment_add_edit_contact">
+        <argument
+            android:name="contact"
+            app:argType="com.example.myapplicationpractice.models.Contact"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 
     <fragment
@@ -42,8 +61,21 @@
         android:label="@string/nav_vault"
         tools:layout="@layout/fragment_vault_home">
         <action
+            android:id="@+id/action_vaultHome_to_vaultAuth"
+            app:destination="@id/vaultAuthFragment" />
+        <action
             android:id="@+id/action_vaultHome_to_vaultModuleDetail"
             app:destination="@id/vaultModuleDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vaultAuthFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultAuthFragment"
+        android:label="@string/vault_verification"
+        tools:layout="@layout/fragment_vault_auth">
+        <action
+            android:id="@+id/action_vaultAuth_to_vaultMedical"
+            app:destination="@id/vaultMedicalFragment" />
     </fragment>
 
     <fragment
@@ -54,12 +86,113 @@
         <argument
             android:name="vaultModule"
             app:argType="com.example.myapplicationpractice.models.VaultModule" />
+        <action
+            android:id="@+id/action_moduleDetail_to_medical"
+            app:destination="@id/vaultMedicalFragment" />
+        <action
+            android:id="@+id/action_moduleDetail_to_assets"
+            app:destination="@id/vaultAssetsFragment" />
+        <action
+            android:id="@+id/action_moduleDetail_to_finances"
+            app:destination="@id/vaultFinancesFragment" />
+        <action
+            android:id="@+id/action_moduleDetail_to_estate"
+            app:destination="@id/vaultEstateFragment" />
+        <action
+            android:id="@+id/action_moduleDetail_to_threats"
+            app:destination="@id/vaultThreatsFragment" />
+        <action
+            android:id="@+id/action_moduleDetail_to_wishes"
+            app:destination="@id/vaultWishesFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/vaultMedicalFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultMedicalFragment"
+        android:label="@string/medical_title"
+        tools:layout="@layout/fragment_vault_medical" />
+
+    <fragment
+        android:id="@+id/vaultAssetsFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultAssetsFragment"
+        android:label="@string/assets_title"
+        tools:layout="@layout/fragment_vault_assets" />
+
+    <fragment
+        android:id="@+id/vaultFinancesFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultFinancesFragment"
+        android:label="@string/finances_title"
+        tools:layout="@layout/fragment_vault_finances" />
+
+    <fragment
+        android:id="@+id/vaultEstateFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultEstateFragment"
+        android:label="@string/estate_title"
+        tools:layout="@layout/fragment_vault_estate" />
+
+    <fragment
+        android:id="@+id/vaultThreatsFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultThreatsFragment"
+        android:label="@string/threats_title"
+        tools:layout="@layout/fragment_vault_threats" />
+
+    <fragment
+        android:id="@+id/vaultWishesFragment"
+        android:name="com.example.myapplicationpractice.fragments.VaultWishesFragment"
+        android:label="@string/final_wishes_title"
+        tools:layout="@layout/fragment_vault_wishes" />
+
+    <!-- Safety Alerts Feed (F1: REST API) -->
+    <fragment
+        android:id="@+id/newsFeedFragment"
+        android:name="com.example.myapplicationpractice.fragments.NewsFeedFragment"
+        android:label="Alerts"
+        tools:layout="@layout/fragment_news_feed">
+        <action
+            android:id="@+id/action_newsFeed_to_alertDetail"
+            app:destination="@id/alertDetailFragment" />
+    </fragment>
+
+    <!-- Alert Detail (F1: show full alert info in-app) -->
+    <fragment
+        android:id="@+id/alertDetailFragment"
+        android:name="com.example.myapplicationpractice.fragments.AlertDetailFragment"
+        android:label="Alert Detail"
+        tools:layout="@layout/fragment_alert_detail" />
+
 
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.myapplicationpractice.fragments.SettingsFragment"
         android:label="@string/nav_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_profile"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_settings_to_security"
+            app:destination="@id/securitySettingsFragment" />
+        <action
+            android:id="@+id/action_settings_to_notifications"
+            app:destination="@id/notificationSettingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapplicationpractice.fragments.ProfileFragment"
+        android:label="@string/profile_title"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/securitySettingsFragment"
+        android:name="com.example.myapplicationpractice.fragments.SecuritySettingsFragment"
+        android:label="@string/security_settings_title"
+        tools:layout="@layout/fragment_security_settings" />
+
+    <fragment
+        android:id="@+id/notificationSettingsFragment"
+        android:name="com.example.myapplicationpractice.fragments.NotificationSettingsFragment"
+        android:label="@string/notification_settings_title"
+        tools:layout="@layout/fragment_notification_settings" />
 
 </navigation>

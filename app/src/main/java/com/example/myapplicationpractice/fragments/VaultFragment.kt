@@ -33,5 +33,15 @@ class VaultFragment : Fragment(R.layout.fragment_vault_home) {
         recycler.adapter = adapter
         recycler.setHasFixedSize(true)
         adapter.submitList(modules)
+
+        // Wire Unlock Vault button → navigate to OTP auth screen
+        view.findViewById<View>(R.id.btn_unlock_vault).setOnClickListener {
+            findNavController().navigate(R.id.action_vaultHome_to_vaultAuth)
+        }
+
+        // Wire "I Received an Emergency OTP" button
+        view.findViewById<View>(R.id.btn_contact_vault_access).setOnClickListener {
+            findNavController().navigate(R.id.action_vaultHome_to_vaultAuth)
+        }
     }
 }

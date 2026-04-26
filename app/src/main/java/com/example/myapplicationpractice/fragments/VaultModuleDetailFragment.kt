@@ -4,6 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.myapplicationpractice.R
 import com.example.myapplicationpractice.models.VaultModule
 import com.example.myapplicationpractice.navigation.NavKeys
@@ -20,6 +21,25 @@ class VaultModuleDetailFragment : Fragment(R.layout.fragment_vault_module_detail
         view.findViewById<android.widget.TextView>(R.id.tv_module_description).text = module.description
         view.findViewById<android.widget.TextView>(R.id.tv_module_item_count).text =
             if (module.isLocked) "Locked module" else "${module.itemCount} items available"
+
+        // Back navigation
+        view.findViewById<View>(R.id.btn_module_back)?.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        // Open full module screen based on module ID
+        view.findViewById<View>(R.id.btn_open_module)?.setOnClickListener {
+            val navId = when (module.id) {
+                "medical"  -> R.id.action_moduleDetail_to_medical
+                "assets"   -> R.id.action_moduleDetail_to_assets
+                "finances" -> R.id.action_moduleDetail_to_finances
+                "estate"   -> R.id.action_moduleDetail_to_estate
+                "threats"  -> R.id.action_moduleDetail_to_threats
+                "wishes"   -> R.id.action_moduleDetail_to_wishes
+                else -> null
+            }
+            navId?.let { findNavController().navigate(it) }
+        }
     }
 
     private fun readModuleFromArgs(): VaultModule? {
@@ -32,4 +52,3 @@ class VaultModuleDetailFragment : Fragment(R.layout.fragment_vault_module_detail
         }
     }
 }
-

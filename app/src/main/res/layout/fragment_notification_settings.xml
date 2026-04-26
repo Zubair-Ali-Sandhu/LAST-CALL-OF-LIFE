@@ -31,7 +31,7 @@
             android:textSize="10sp" android:letterSpacing="0.15"
             android:fontFamily="@font/montserrat_bold" android:layout_marginBottom="10dp"/>
 
-        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
             android:layout_height="wrap_content" android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
@@ -92,14 +92,14 @@
                         android:src="@drawable/ic_chevron_right" app:tint="#4A5070"/>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="@string/alert_channels" android:textColor="@color/text_secondary"
             android:textSize="10sp" android:letterSpacing="0.15"
             android:fontFamily="@font/montserrat_bold" android:layout_marginBottom="10dp"/>
 
-        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="0dp" app:strokeColor="@color/border_subtle" app:strokeWidth="1dp">
@@ -154,7 +154,7 @@
                         style="@style/Widget.LastCall.Switch"/>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

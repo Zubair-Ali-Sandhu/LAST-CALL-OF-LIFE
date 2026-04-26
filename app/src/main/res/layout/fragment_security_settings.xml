@@ -43,7 +43,7 @@
             android:layout_marginBottom="10dp"/>
 
         <!-- Security Options Card -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -173,7 +173,7 @@
                         app:tint="@color/text_tertiary"/>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Section Header: Auto-Lock -->
         <TextView

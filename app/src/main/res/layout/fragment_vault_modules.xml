@@ -15,7 +15,7 @@
         android:paddingBottom="40dp">
 
         <!-- Vault owner card -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -57,7 +57,7 @@
                     app:chipStrokeColor="#00D68F40"
                     app:chipStrokeWidth="1dp"/>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="wrap_content"

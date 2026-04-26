@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/homeFragment" android:icon="@drawable/ic_home" android:title="@string/nav_home"/>
     <item android:id="@+id/contactsFragment" android:icon="@drawable/ic_people" android:title="@string/nav_contacts"/>
+    <item android:id="@+id/newsFeedFragment" android:icon="@drawable/ic_sos_alert" android:title="Alerts"/>
     <item android:id="@+id/vaultHomeFragment" android:icon="@drawable/ic_vault_lock" android:title="@string/nav_vault"/>
     <item android:id="@+id/settingsFragment" android:icon="@drawable/ic_settings" android:title="@string/nav_settings"/>
 </menu>

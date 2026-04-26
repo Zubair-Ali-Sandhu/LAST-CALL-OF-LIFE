@@ -14,7 +14,7 @@
         android:paddingBottom="96dp">
 
         <!-- Profile card -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_profile_preview"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp" android:layout_marginTop="20dp"
@@ -43,7 +43,7 @@
                 <ImageView android:layout_width="18dp" android:layout_height="18dp"
                     android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- CHECK-IN GROUP -->
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:text="CHECK-IN" android:textColor="@color/text_secondary" android:textSize="10sp"
             android:letterSpacing="0.15" android:fontFamily="@font/montserrat_bold"/>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp" android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
@@ -100,7 +100,7 @@
                         android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- SECURITY GROUP -->
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
             android:text="SECURITY" android:textColor="@color/text_secondary" android:textSize="10sp"
             android:letterSpacing="0.15" android:fontFamily="@font/montserrat_bold"/>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp" android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="@dimen/card_corner_radius"
@@ -140,7 +140,7 @@
                     android:paddingHorizontal="18dp"
                     android:background="?attr/selectableItemBackground">
                     <ImageView android:layout_width="20dp" android:layout_height="20dp"
-                        android:src="@drawable/ic_notifications" app:tint="#4A90E2"/>
+                        android:src="@drawable/ic_notifications" app:tint="@color/accent_blue"/>
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:layout_marginStart="14dp"
                         android:text="Notification Settings"
@@ -167,7 +167,7 @@
                         android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary"/>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- ACCOUNT -->
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
