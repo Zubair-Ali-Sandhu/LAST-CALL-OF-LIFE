@@ -1,221 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_primary"
-    android:padding="24dp">
+    android:overScrollMode="never"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/iv_lock"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/ic_vault_lock"
-        android:background="@drawable/bg_icon_circle_accent"
-        android:padding="14dp"
-        android:layout_marginTop="48dp"
-        app:tint="@color/accent_red"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_auth_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="@string/vault_verification"
-        android:textColor="@color/text_primary"
-        android:textSize="26sp"
-        android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintTop_toBottomOf="@id/iv_lock"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_auth_subtitle"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="@string/enter_your_phone_number_and_the_otp_received_via_sms_to_access_the_vault"
-        android:textColor="@color/text_secondary"
-        android:textSize="14sp"
-        android:lineSpacingMultiplier="1.4"
-        app:layout_constraintTop_toBottomOf="@id/tv_auth_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:padding="24dp"
+        android:paddingBottom="40dp">
 
-    <!-- Phone Number Input -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        style="@style/Widget.LastCall.TextInputLayout"
-        android:hint="Registered Phone Number"
-        app:layout_constraintTop_toBottomOf="@id/tv_auth_subtitle">
+        <ImageView
+            android:id="@+id/iv_lock"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_vault_lock"
+            android:background="@drawable/bg_icon_circle_accent"
+            android:padding="14dp"
+            android:layout_marginTop="48dp"
+            app:tint="@color/accent_red"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone_number"
+        <TextView
+            android:id="@+id/tv_auth_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/vault_verification"
+            android:textColor="@color/text_primary"
+            android:textSize="26sp"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintTop_toBottomOf="@id/iv_lock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_auth_subtitle"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:inputType="phone"
-            android:textColor="@color/text_primary" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/tv_otp_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Enter 6-Digit OTP"
-        android:textColor="@color/text_secondary"
-        android:textSize="13sp"
-        app:layout_constraintTop_toBottomOf="@id/til_phone"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- CUSTOM OTP CONTAINER - REPLACES PINVIEW -->
-    <LinearLayout
-        android:id="@+id/otp_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:weightSum="6"
-        app:layout_constraintTop_toBottomOf="@id/tv_otp_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <EditText
-            android:id="@+id/otp_1"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/bg_otp_box"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:fontFamily="monospace"
-            android:importantForAutofill="no" />
+            android:text="@string/enter_your_phone_number_and_the_otp_received_via_sms_to_access_the_vault"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:lineSpacingMultiplier="1.4"
+            app:layout_constraintTop_toBottomOf="@id/tv_auth_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/otp_2"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/bg_otp_box"
+        <!-- Phone Number Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            style="@style/Widget.LastCall.TextInputLayout"
+            android:hint="Registered Phone Number"
+            app:layout_constraintTop_toBottomOf="@id/tv_auth_subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:inputType="phone"
+                android:textColor="@color/text_primary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_otp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enter 6-Digit OTP"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/til_phone"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- CUSTOM OTP CONTAINER - REPLACES PINVIEW -->
+        <LinearLayout
+            android:id="@+id/otp_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
+            android:weightSum="6"
+            app:layout_constraintTop_toBottomOf="@id/tv_otp_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <EditText
+                android:id="@+id/otp_1"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/otp_2"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/otp_3"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/otp_4"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/otp_5"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/otp_6"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:importantForAutofill="no" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_attempts_remaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="5 attempts remaining"
+            android:textColor="@color/accent_warning"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/otp_container"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_verify_otp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_button_primary"
+            android:text="VERIFY &amp; ACCESS VAULT"
             android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:fontFamily="monospace"
-            android:importantForAutofill="no" />
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:letterSpacing="0.08"
+            android:stateListAnimator="@null"
+            app:layout_constraintTop_toBottomOf="@id/tv_attempts_remaining"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/otp_3"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/bg_otp_box"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:fontFamily="monospace"
-            android:importantForAutofill="no" />
+        <ProgressBar
+            android:id="@+id/progress_verifying"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:indeterminateTint="#FF2D55"
+            app:layout_constraintTop_toBottomOf="@id/btn_verify_otp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/otp_4"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/bg_otp_box"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:fontFamily="monospace"
-            android:importantForAutofill="no" />
-
-        <EditText
-            android:id="@+id/otp_5"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/bg_otp_box"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:fontFamily="monospace"
-            android:importantForAutofill="no" />
-
-        <EditText
-            android:id="@+id/otp_6"
-            android:layout_width="0dp"
-            android:layout_height="58dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_otp_box"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:fontFamily="monospace"
-            android:importantForAutofill="no" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_attempts_remaining"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="5 attempts remaining"
-        android:textColor="@color/accent_warning"
-        android:textSize="13sp"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/otp_container"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_verify_otp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/bg_button_primary"
-        android:text="VERIFY &amp; ACCESS VAULT"
-        android:textColor="@color/text_primary"
-        android:textSize="15sp"
-        android:fontFamily="@font/montserrat_bold"
-        android:letterSpacing="0.08"
-        android:stateListAnimator="@null"
-        app:layout_constraintTop_toBottomOf="@id/tv_attempts_remaining"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progress_verifying"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="16dp"
-        android:visibility="gone"
-        android:indeterminateTint="#FF2D55"
-        app:layout_constraintTop_toBottomOf="@id/btn_verify_otp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
