@@ -6,7 +6,7 @@
 
 ---
 
-## 📖 Overview
+##  Overview
 
 **Last Call of Life** is a *Dead Man's Switch* Android application. Users check in daily to confirm they are alive. If a check-in is missed, the app automatically notifies emergency contacts and unlocks a secure **Digital Vault** containing finances, medical records, estate plans, final wishes, and threat assessments — ensuring loved ones have access to critical information when it matters most.
 
