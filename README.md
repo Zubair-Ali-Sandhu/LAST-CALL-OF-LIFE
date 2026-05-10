@@ -14,7 +14,7 @@
 
 ##  Features
 
-### 🏠 Home Dashboard
+###  Home Dashboard
 - Personalized greeting with notification badge (FrameLayout overlay)
 - Emergency contacts carousel (HorizontalScrollView)
 - Quick-access vault module shortcuts
