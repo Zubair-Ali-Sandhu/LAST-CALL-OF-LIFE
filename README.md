@@ -19,7 +19,7 @@
 - Emergency contacts carousel (HorizontalScrollView)
 - Quick-access vault module shortcuts
 
-### 🔐 Digital Vault
+###  Digital Vault
 - **Finances** — Total owed, collectibles, and net worth summary with data table
 - **Medical** — Medical records and health information
 - **Estate Plans** — Property and estate documentation
