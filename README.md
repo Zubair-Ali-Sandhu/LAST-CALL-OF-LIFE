@@ -12,7 +12,7 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 ### 🏠 Home Dashboard
 - Personalized greeting with notification badge (FrameLayout overlay)
